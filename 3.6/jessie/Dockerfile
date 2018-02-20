@@ -92,6 +92,10 @@ RUN set -ex; \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
 
+RUN apt-get update;
+RUN apt-get install -y vim;
+
 RUN pip install celery;
+RUN pip install kombu;
 
 CMD ["python3"]
